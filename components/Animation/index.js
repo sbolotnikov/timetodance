@@ -105,7 +105,7 @@ const size = useWindowSize();
     gsap.timeline({ delay: 10 })
       .to("#couple", { opacity: 1, duration: 1, transformOrigin: `${-35 + (size.width- 300) / 1100 * 15}vw 50%` })
       .to("#couple", { duration: 2, rotationY: 360 })
-      .to("#couple", {  transformOrigin: `${-35 + (size.width- 300) / 1100 * 15}vw 50%`, opacity:0, scale:10, duration: 2 })
+      .to("#couple", {  opacity:0, scale:10, duration: 2 })
       .to("#container0",{height:0, duration:1.5})
       .fromTo(".heroSection",{opacity:0},{opacity:1, duration:1.5},'-=1.5')
     // .to("#couple",{scale:.3,transformOrigin:`${Math.floor((widthW-375)/905*47)-75}vw ${5}vh`, opacity:0, duration:1})

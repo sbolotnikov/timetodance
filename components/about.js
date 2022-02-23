@@ -12,7 +12,7 @@ function AboutComponent() {
       desc: 'All our instructors are officially register with NDCA (USA Professional DanceSport Organization). They hold numerous certificates from Fred Astaire, Arthur Murray, Imperial Society Teachers of Dance and the Russian DanceSport Association. ',
     },
     {
-      imgLink: '/icons/cake.svg',
+      imgLink: '/svg/choreo.svg',
       name: 'Special choreography',
       desc: 'Create special choreography for events (Pro-Am Competitions, parties, Weddings, Sweet 16, Bar/Bat-Mitzvahs).',
     },
