@@ -1,0 +1,76 @@
+
+div#container0{
+  display:flex; 
+  height:100vh;
+  width:100vw; 
+  overflow: hidden;
+  position:relative;
+ 
+}
+  
+
+div#dude{ 
+    position: relative;
+    left:0;
+    top:77vh;
+    height:40vh;
+    overflow:visible;
+    z-index:400
+  }
+  svg#dudeSVG{
+    position:absolute;
+    top:0;
+    left:0;
+    width:auto;
+    height:100%;
+    overflow:visible;
+  }
+  div#girl{
+      position: relative; 
+      left:100%;
+      top:0; 
+      height:40vh;
+      overflow:visible;
+      z-index:20;
+  }
+  svg#girlSVG{
+      position:absolute;
+      bottom:0;
+      right:0;
+      width:auto;
+      height:100%;
+      overflow:visible;
+  }
+  div#couple{
+      position: relative;
+      top:27%;
+      height:40vh;
+      overflow:visible;
+      opacity:0;
+  }
+  svg#coupleSVG{
+      position:absolute;
+      bottom:0;
+      right:0;
+      width:auto;
+      height:100%;
+      overflow:visible;
+  }
+  div#timeClock{
+    position: relative;
+    height:25vh;
+    overflow:visible;
+    z-index:10;
+    opacity:0;
+    transform:scale(10) rotateY(-650deg);
+    transform-origin: 0% 50%;
+
+}
+svg#timeClockSVG{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:auto;
+    height:100%;
+    overflow:visible;
+}
