@@ -1,5 +1,5 @@
 let dataObject = {
-    mainEmail:'Таинственный переулок<pereulok_74@mail.ru>',
+    mainEmail:'Best Time To Dance<sbolotnikov@gmail.com>',
     games : [
         {
           name: `Квест "Тайны Гудини"` ,

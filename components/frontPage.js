@@ -91,13 +91,13 @@ export default function FrontPage() {
               journey into an activity that can improve all aspects of your life
               while giving you experiences that you will never forget, give us a
               call and sign up for your first dance class today!
-              <Link href="/contacts/0">
+              {/* <Link href="/contacts/0">
                 <div className="text-[#FFEC00] font-extrabold cursor-pointer">
                   в Челябинске
                 </div>
-              </Link>
+              </Link> */}
             </h3>
-            <button
+            {/* <button
               className="navbar__item"
               onClick={(e) => {
                 router.replace('/book');
@@ -105,7 +105,7 @@ export default function FrontPage() {
               style={{ padding: '5px 0', margin: '10px 0' }}
             >
               Забронировать
-            </button>
+            </button> */}
           </div>
         </div>
         {scrolling && <AboutComponent />}

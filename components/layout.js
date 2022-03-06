@@ -39,10 +39,10 @@ export default function Layout({ children }) {
       </Head>
       {/* bg-main-bg  */}
 
-      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont text-black relative text-lg overflow-hidden overflow-y-scroll" style={{backgroundImage:"url('/images/Open Room Set3.png')"}}>
+      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont text-black relative text-lg overflow-hidden overflow-y-scroll" style={{backgroundImage:"url('/images/floor.png')"}}>
         <Navbar navbarLinks={(session && session.user.status ==="admin")?navbarLinksAdmin:(session && session.user.status ==="super")?navbarLinksSuper:navbarLinks} path={router.asPath} />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </div>
   );

@@ -40,49 +40,34 @@ function AboutComponent() {
   const [visibleDetails, setVisibleDetails] = useState(false);
   var options = [
     {
-      question: 'Это безопасно?',
+      question: ' Do I need a dance partner?',
       answer:
-        'Да, игра абсолютно безопасна. В локации нет травмирующих предметов. Кроме того, перед началом игры вам выдадут специальное снаряжение.',
+        'Best Time to Dance offers dance lessons for singles and couples alike. Whatever your situation, one of our well trained professional dance instructors will guide you. If you come along your instructor will partner you while teaching the lessons. What an exciting and effective way of learning!',
     },
     {
-      question: 'Могут ли играть дети?',
+      question: 'How should I dress for my dance lesson?',
       answer:
-        'Конечно, кроме взрослых, у нас с удовольствием играют дети и отмечают дни рождения. Узнайте больше о том, как проходят «Прятки» для детей:<br> <button class="btnBlue"><a href="/kids">Подробнее 🠢</a></button>',
+        'We encourage our dance students to dress comfortably stressing ease of movement.  Leather soled shoes are best on our ballroom floor. Any type of sling-backs, tennis shoes or boots are discouraged. Practice wear and dance shoes are available for purchase in stores of New York City. For list of suggested stores feel free to ask your instructor.',
     },
     {
-      question: 'В какой одежде приходить?',
+      question: 'Where will I use this style of dancing?',
       answer:
-        'Приходите в любой удобной одежде, которая вам нравится. В игре нет пачкающих предметов.',
+        'Best Time to Dance teaches dances used in any social situation. Many students come to learn how to dance  for a special occasion such as a first wedding dance, formal dinner, company holiday party, bar or bat mitzvah or prom and find they develop dance skills appropriate for any occasion. Look at our Social Party page.',
     },
     {
-      question: 'Где находится игра?',
+      question: 'Are Group Classes Available?',
       answer:
-        'В Челябинске несколько адресов:- пр-т Ленина, д. 24 <em><a href="/contacts/0">(см. карту)</a></em>- ул. Тепличная 21 <em><a href="/contacts/1">(см. карту)</a></em> При бронировании вы можете выбрать наиболее удобную локацию.',
+        'Our group dance classes usually arrange by request. Also you may want to visit our Group Lesson page to learn more.',
     },
     {
-      question: 'Сколько это стоит?',
+      question: 'What is your cancellation policy?',
       answer:
-        'От 540 рублей за игрока. Стоимость зависит от дня недели, времени игры и экшен-пакета. Чтобы узнать стоимость, нажмите здесь, после выберите экшен-пакет и время игры.',
+        'Due to the growing popularity of ballroom dancing, we ask our students to cancel any dance lesson a minimum of 24 hours ahead of time to avoid being charged in regular ballroom. For the private room deadline is extended to 48 hours. Please, leave us a voice message rather than a text.',
     },
     {
-      question: 'А это страшно? :)',
+      question: 'Feel free to email us your question. We will be happy to answer you here.',
       answer:
-        'Все зависит только от вас . Темнота умеет подстраиваться под игроков. <b>Если приходят взрослые</b>, то она конечно не упускает возможность пощекотать игрокам нервишки! <b>Если приходят дети</b>, то лабиринт становится чуть более дружелюбным. В любом случае, скучать вам не придется, лабиринт полон сюрпризов .',
-    },
-    {
-      question: 'С нами будут играть другие команды?',
-      answer:
-        'На время, которое вы забронируете, игровая локация будет в распоряжении вашей команды. Других команд в локации не будет.',
-    },
-    {
-      question: 'Сколько игроков может быть в команде?',
-      answer:
-        'В вашей команде может быть от 2 до 35 человек. Размер команды практически не влияет на качество игры, но чем больше, тем веселее. ;)',
-    },
-    {
-      question: 'Как проходит игра, какие правила?',
-      answer:
-        'Перед началом игры проводится инструктаж, выдается защитное снаряжение (шлемы и очки), между игроками распределяются роли и начинается игра. Правила игры подробно расскажет ведущий во время инструктажа. Также вы можете ознакомиться с ними самостоятельно чуть выше на этой странице.',
+        '',
     },
   ];
 
@@ -144,7 +129,7 @@ function AboutComponent() {
       </div>
       
       
-        <Slider />
+        {/* <Slider /> */}
       <AccordionFAQ options={options} />
     </div>
   );
