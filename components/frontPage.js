@@ -56,7 +56,7 @@ export default function FrontPage() {
             <div className="relative xs:w-52 w-64 ">
               <img
                 className="w-64 absolute top-0 left-0 "
-                style={{ filter: 'drop-shadow(10px 5px 4px #6a640d)' }} //#4444dd #FFEC00 #7D8800 shadow change
+                //style={{ filter: 'drop-shadow(10px 5px 4px #6a640d)' }} #4444dd #FFEC00 #7D8800 shadow change
                 src={'/svg/logo.svg'}
                 alt="hero"
               />
