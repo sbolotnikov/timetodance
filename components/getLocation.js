@@ -45,7 +45,7 @@ function GetLocation(props) {
           >
             <div
               key={`inner-loc-${index}`}
-              className="grid xs:grid-cols-1  sm:grid-cols-4 phone:grid-cols-4  rounded-r  h-full border-2 border-gray-700 max-w-xs bg-popup p-2"
+              className="grid xs:grid-cols-1  sm:grid-cols-4 phone:grid-cols-4  rounded-r  h-full border-2 border-gray-700 max-w-xs bg-mainMaroon text-white p-2"
               value={index}
             >
               <div

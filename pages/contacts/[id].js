@@ -8,7 +8,7 @@ function contacts(props) {
   let locations = value.locations;
   return (
     <div>
-      <h1 className="text-center p-6 font-extrabold">Where is it?</h1>
+      <h1 className="text-center p-6 font-extrabold text-mainMaroon uppercase">Where is it?</h1>
       {/* Где находится? */}
       <GetLocation
             loc={location}
@@ -17,7 +17,7 @@ function contacts(props) {
               setLocation(loc);
             }}
           />
-      <h2 className=" font-extrabold m-4 text-center text-5xl" style={{ fontFamily: 'Lumberjack'}}>
+      <h2 className=" font-extrabold m-4 text-center text-5xl text-mainMaroon font-[GoudyBookletter]" >
         {locations[location].name}
       </h2>
       <div className="containerContacts">

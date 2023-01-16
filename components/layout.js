@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const {data:session, loading} = useSession();
   const router = useRouter();
   let navbarLinks = [
-    { url: '#', title: 'Social Dancers' },
+    { url: '/social', title: 'Social Dancers' },
     { url: '/competition', title: 'Competitive' },
     { url: '/wedding', title: 'Wedding couples' },
     { url: '#', title: 'Kids' },
@@ -39,9 +39,11 @@ export default function Layout({ children }) {
       </Head>
       {/* bg-main-bg  */}
 
-      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont text-black relative text-lg overflow-hidden overflow-y-scroll" style={{backgroundImage:"url('/images/floor.png')"}}>
+      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont text-black relative text-lg overflow-y-auto" >
         <Navbar navbarLinks={(session && session.user.status ==="admin")?navbarLinksAdmin:(session && session.user.status ==="super")?navbarLinksSuper:navbarLinks} path={router.asPath} />
+      
         {children}
+      
         {/* <Footer /> */}
       </main>
     </div>

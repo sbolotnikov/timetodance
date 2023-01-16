@@ -139,7 +139,7 @@ let dataObject = {
             coordinates1:{x:55.20358,y:61.32539,text:"Вход"}
         },
         {
-          name: 'Best Time To Dance NJ',
+          name: 'Best Time  To  Dance  NJ',
           description: 'Garfield, NJ',
           symbol: '/svg/logo 3.svg',
           address: "237 Division Ave, 2nd Floor<br> Garfield, NJ 07026",

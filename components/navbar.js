@@ -2,10 +2,12 @@ import { useState } from 'react';
 import Emailform from './emailform';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import Burger from './burger';
 // import ContactMailIcon from '@mui/icons-material/ContactMail';
 const Navbar = ({ navbarLinks, path }) => {
   // Determines if the "menu icon" was clicked or not. Note that this icon is only visible when the window width is small.
   const [menuClicked, setMenuClicked] = useState(false);
+  const [burgerState, setBurgerState] = useState(false)
   const [emailFormVis, setEmailFormVis] = useState(false);
   const { data: session, loading } = useSession();
   const toggleMenuClick = () => {
@@ -17,7 +19,7 @@ const Navbar = ({ navbarLinks, path }) => {
       <Link className="navbar__link" href={'/'}>
         <span className="navbar__logo">
           {path !== '/' ? (
-            <img src={'/svg/logo 1.svg'} alt="call root" />
+            <img src={'/svg/logo yellow.svg'} alt="call root" />
           ) : (
             <div></div>
           )}
@@ -25,17 +27,17 @@ const Navbar = ({ navbarLinks, path }) => {
       </Link>
       <ul
         className={
-          menuClicked ? 'navbar__list navbar__list--active' : 'navbar__list'
+          burgerState ? 'navbar__list navbar__list--active' : 'navbar__list'
         }
       >
         {/* {nav.width()} */}
-        {menuClicked && (
+        {burgerState && (
           <li className="navbar__item" key={'zeroitem'}>
             <Link className="navbar__link bg-main-bg" href={'tel:+19179162840'}>
               <a
                 className="flex flex-row justify-center items-center"
                 onClick={() => {
-                  setMenuClicked(false);
+                  setBurgerState(false);
                 }}
               >
                 <div className="w-4">
@@ -73,7 +75,7 @@ const Navbar = ({ navbarLinks, path }) => {
               <Link className="navbar__link" href={item.url}>
                 <a
                   onClick={() => {
-                    setMenuClicked(false);
+                    setBurgerState(false);
                   }}
                 >
                   {item.title}
@@ -88,7 +90,7 @@ const Navbar = ({ navbarLinks, path }) => {
         {((session && session.user.status !== 'admin') || !session) && (
           <div className="navbar__menu_grid">
             <Link href={'tel:+19179162840'}>
-              <svg fill="#594949" viewBox="0 0 28 30" alt="menu call">
+              <svg fill="#6a640d" viewBox="0 0 28 30" alt="menu call">
                 <path
                   id="path77"
                   d="M23.6541 28.8036C23.585 28.6719 20.1432 24.9872 19.7125 24.5133C19.2449 23.9988 17.6009 22.285 17.3286 21.922C17.0139 22.0631 16.6419 22.6852 15.3917 21.8978C14.6888 21.4552 13.7093 20.6443 13.0943 20.081C12.7336 19.7507 10.9025 17.7438 10.45 17.2489C10.2302 17.0085 10.0206 16.7509 9.79265 16.5276C9.52823 16.2686 9.35677 16.0777 9.12418 15.8186C8.43281 15.0483 7.88744 14.4676 7.38445 13.4078C6.70648 11.9791 7.36634 11.5723 7.4648 11.2758C7.0349 10.8925 3.95928 7.51349 3.40155 6.90183L0.95227 4.27832C0.568645 4.57321 0.1898 5.92234 0.0904628 6.61764C-0.517768 10.8733 2.05768 15.3127 4.32384 18.4104C4.89114 19.1859 5.82657 20.3562 6.46632 21.0474C6.60268 21.1947 6.7089 21.3335 6.84143 21.4864C7.28928 22.003 8.2959 23.0201 8.7941 23.5238C9.04671 23.7792 9.33943 24.0456 9.61383 24.2919C12.1785 26.5954 15.0759 28.8319 18.5794 29.5773C19.4741 29.7677 20.4573 29.8461 21.3988 29.7261C22.1763 29.6269 23.2897 29.281 23.6541 28.8036V28.8036Z"
@@ -120,7 +122,7 @@ const Navbar = ({ navbarLinks, path }) => {
               setEmailFormVis(true);
             }}
           >
-            <svg fill="#594949" viewBox="0 0 100 100" alt="menu send email" >
+            <svg fill="#6a640d" viewBox="0 0 100 100" alt="menu send email" >
               <path d="M50.409,6C23.065,6,.818,22.886.818,43.641c0,13.222,8.918,25.245,23.855,32.163l1.67.773.41,12.436a3.354,3.354,0,0,0,5.058,2.777L49.592,81.283h.817C77.753,81.283,100,64.4,100,43.641S77.753,6,50.409,6ZM37.158,45.439a5.68,5.68,0,1,1-6.682-6.684A5.668,5.668,0,0,1,37.158,45.439Zm18.124,0A5.68,5.68,0,1,1,48.6,38.754,5.669,5.669,0,0,1,55.282,45.438Zm19.517,0a5.68,5.68,0,1,1-6.682-6.684A5.668,5.668,0,0,1,74.8,45.438Z" />
             </svg>
           </div>
@@ -139,7 +141,41 @@ const Navbar = ({ navbarLinks, path }) => {
             </Link>
           </div>
         )}
-        {menuClicked ? (
+        <button
+          className="navbar__menu relative m-1 flex cursor-pointer "
+          onClick={() => {
+            burgerState
+              ? document
+                  .getElementsByClassName('navbar__list')[0]
+                  .classList.add('w-0')
+              : document
+                  .getElementsByClassName('navbar__list')[0]
+                  .classList.remove('w-0')
+            let items = document.querySelectorAll('.nav_img')
+            for (let i = 0; i < items.length; i++) {
+              burgerState
+                ? items[i].classList.add('w-0')
+                : items[i].classList.remove('w-0')
+            }
+            burgerState
+              ? document.getElementById('theme-toggle')?.classList.add('hidden')
+              : document
+                  .getElementById('theme-toggle')
+                  ?.classList.remove('hidden')
+            burgerState
+              ? document
+                  .getElementById('locale-toggle')
+                  ?.classList.add('hidden')
+              : document
+                  .getElementById('locale-toggle')
+                  ?.classList.remove('hidden')
+
+            setBurgerState(!burgerState)
+          }}
+        >
+          <Burger status={burgerState} />
+        </button>
+        {/* {menuClicked ? (
           <div className="navbar__menu w-4" onClick={toggleMenuClick}>
             <svg viewBox="0 0 23 23" fill="#594949" alt="menu close">
               <path d="M1.06069 1.06066C1.64647 0.474877 2.59622 0.474877 3.18201 1.06066L21.5668 19.4454C22.1526 20.0312 22.1526 20.981 21.5668 21.5668C20.981 22.1525 20.0312 22.1525 19.4455 21.5668L1.06069 3.18198C0.474901 2.5962 0.474901 1.64645 1.06069 1.06066Z" />
@@ -154,7 +190,7 @@ const Navbar = ({ navbarLinks, path }) => {
               <path d="M0.108387 15.097C0.695413 6.97279 7.77467 0.395477 15.9201 0.406447L271.558 0.753185C279.703 0.764334 285.83 7.35885 285.243 15.4831C284.656 23.6073 277.578 30.1843 269.432 30.1731L13.794 29.827C5.64931 29.8154 -0.477957 23.2205 0.108387 15.097Z" />
             </svg>
           </div>
-        )}
+        )} */}
       </div>
       {emailFormVis && (
         <Emailform

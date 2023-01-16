@@ -318,8 +318,9 @@ const size = useWindowSize();
             </g>
             <defs>
             <linearGradient id="paint_linear" x1="563.356" y1="326.691" x2="834.451" y2="1365.4" gradientUnits="userSpaceOnUse" >
-              <stop stop-color="white" />
-              <stop offset="0.721875" stop-color="#FBABAB"/>
+              <stop stop-color="#0149A2" />
+              <stop offset="0.721875" stop-color="#001E3C"/>
+              {/* #001E3C #FBABAB*/}
             </linearGradient>
              
             </defs>
@@ -473,8 +474,9 @@ const size = useWindowSize();
               </linearGradient>
             
               <linearGradient id="paint3_linear" x2="1091" y2="427" x1="1091" y1="1500.5" gradientUnits="userSpaceOnUse">
-               <stop offset="0.324692" stop-color="#FBABAB"/>
-               <stop offset="1" stop-color="white"/>
+               <stop offset="0.324692" stop-color="#001E3C"/>
+               {/* #FBABAB */}
+               <stop offset="1" stop-color="#0149A2"/>
               </linearGradient>
             </defs>
           </svg>

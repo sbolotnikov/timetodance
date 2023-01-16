@@ -2,9 +2,37 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import AboutComponent from './about';
-
+import Image from 'next/image';
+import Animation from './Animation';
 export default function FrontPage() {
+  const departments = [
+    {
+      imgLink: '/images/locations.png',
+      imgLink2: '/images/locationsfull.png',
+      pageLink: '/contacts/0',
+      pageName: 'Locations',
+    },
+    {
+      imgLink: '/images/wedding.png',
+      imgLink2: '/images/weddingfull.png',
+      pageLink: '/wedding',
+      pageName: 'Wedding Couples',
+    },
+    {
+      imgLink: '/images/competitors.png',
+      imgLink2: '/images/competitorsfull.png',
+      pageLink: '/competition',
+      pageName: 'Competitors',
+    },
+    {
+      imgLink: '/images/social.png',
+      imgLink2: '/images/socialfull.png',
+      pageLink: '/social',
+      pageName: 'Social Dancers',
+    },
+  ];
   const [scrolling, setScrolling] = useState(false);
+  const [animationState, setAnimationState] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
   const router = useRouter();
   // useEffect(() => {
@@ -43,15 +71,77 @@ export default function FrontPage() {
   //       return () => window.removeEventListener('scroll', onScroll);
   //   }, []);
   return (
-    <>
-      <div className="heroSection w-full h-full max-w-[1170px] flex flex-col justify-start  items-start m-auto">
-        <h1
-          className="w-full text-6xl text-center mt-6  xs:hidden sm:hidden phone:block"
-          style={{ fontFamily: 'Lumberjack' }}
-        >
-          Best Time To Dance
-        </h1>
-        <div className=" flex xs:flex-col sm:flex-col phone:flex-row justify-center items-start mx-auto">
+    <div className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
+      {animationState && <div className='absolute w-screen h-screen bg-white'><Animation/></div> }
+      <div className=" w-full flex heroSection justify-between items-center relative">
+        <div className="absolute w-full h-[66.67vh] bg-cover bg-heroImg"></div>
+        <div className=" widthAlt  ">
+          <div className=" h-[66.67vh] hover:grayscale relative" onClick={(e)=>{setAnimationState(true)}}>
+            <Image src={'/images/main.png'} alt="logo" layout="fill" />
+          </div>
+        </div>
+        <div className=" widthAlt  flex justify-center items-center ">
+          <div className="  stainglass rounded-lg border-gray-600/60 portrait:w-[95%] mx-auto text-white p-2 m-1">
+            <h1
+              className=" text-2xl text-center font-[GoudyBookletter] "
+              // style={{ fontFamily: 'Birthstone' }}
+            >
+              Welcome to
+            </h1>
+            <h1
+              className=" fontSizeBig text-center font-[Birthstone] laptop:m-5"
+              // style={{ fontFamily: 'GoudyBookletter' }}
+            >
+              Best Time To Dance
+            </h1>
+            {/* font-size: calc(var(--sizeindex)*1.5 */}
+            <p className="font-[GoudyBookletter] fontSizeMiddle text-center my-2">
+              Unleash your inner dancer <br />
+              And let your spirit take flight <br />
+              The best time to hit the dance floor <br />
+              Is any time, day or night
+            </p>
+            <Link className="navbar__link" href={'/about'}>
+            <div className="navbar__item w-[95%]">        
+                <span  className="m-3" >About Us</span> 
+            </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full landscape:h-full departmentsContainer flex xs:flex-col">
+        {departments.map((item, j) => {
+          return (
+            <Link key={`depart${j}`} href={item.pageLink}>
+              <div className=" landscape:h-full portrait:h-64 w-full   relative flex justify-center items-end pb-2">
+                <Image src={item.imgLink2} alt="logo" layout="fill" />
+                <Image
+                  className="absolute hover:grayscale"
+                  src={item.imgLink}
+                  alt="logo"
+                  layout="fill"
+                />
+                <div className="navbar__item " style={{width:'90%'}}>
+                  <span
+                    className=" navbar__link" style={{ backgroundColor: 'transparent', justifyContent: 'center', margin:'.75rem' }}
+                    //                 onClick={() => {
+                    //   setMenuClicked(false);
+                    // }}
+                  >
+                    {item.pageName}
+                  </span>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+        <span className="relative text-white">annoyed</span>
+      </span> */}
+      {/* <div className=" flex xs:flex-col sm:flex-col phone:flex-row justify-center items-start mx-auto">
           <div className="xs:w-52 w-64 h-[13rem] xs:mx-0 mx-auto">
             <div className="relative xs:w-52 w-64 ">
               <img
@@ -91,35 +181,11 @@ export default function FrontPage() {
               journey into an activity that can improve all aspects of your life
               while giving you experiences that you will never forget, give us a
               call and sign up for your first dance class today!
-              {/* <Link href="/contacts/0">
-                <div className="text-[#FFEC00] font-extrabold cursor-pointer">
-                  в Челябинске
-                </div>
-              </Link> */}
-            </h3>
-            {/* <button
-              className="navbar__item"
-              onClick={(e) => {
-                router.replace('/book');
-              }}
-              style={{ padding: '5px 0', margin: '10px 0' }}
-            >
-              Забронировать
-            </button> */}
-          </div>
-        </div>
-        {scrolling && <AboutComponent />}
-      </div>
-      {/* <div className="w-[50vw] ">
-        <img
-          className="w-full h-[65vh]"
-          style={{ filter: 'drop-shadow(10px 5px 4px #4444dd)' }}
-          src={'/icons/tree_fence_combo.svg'}
-          alt="hero"
-        />
 
-        <img className="w-[75vw] h-[65vh]" style={{filter: 'drop-shadow(10px 5px 4px #4444dd)'}} src={"/icons/houses_cloud.svg"}  alt="hero"  />
-      </div> */}
-    </>
+            </h3>
+          </div>
+        </div> */}
+      {scrolling && <AboutComponent />}
+    </div>
   );
 }

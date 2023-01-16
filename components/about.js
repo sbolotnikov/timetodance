@@ -25,7 +25,7 @@ function AboutComponent() {
   ];
   const listArrayRight = [
     {
-      imgLink: '/icons/banquette.svg',
+      imgLink: '/svg/poise1.svg',
       name: 'Body conditioning',
       desc: 'Support your peak performance with body conditioning, improve your coordination, sense of rhythm, and body poise.',
     },
@@ -77,10 +77,10 @@ function AboutComponent() {
         {' '}
         "The one thing that can solve most of our problems is dancing" <br/>James Brown
       </h1>
-      <h2 className="text-center">Why Us</h2>
+      <h2 className="text-center text-mainMaroon font-extrabold uppercase">Why Us?</h2>
       <div className="flex xs:flex-col sm:flex-col tablet:flex-col laptop:flex-row w-full my-3">
         
-        <div className="w-full m-auto bg-popup/80">
+        <div className="w-full m-auto bg-mainMaroon text-white">
           {listArrayLeft.map((item, index) => {
             return (
               <Card
@@ -108,7 +108,7 @@ function AboutComponent() {
           alt="Прятки в темноте"
           className="lazyloaded m-auto sm:hidden  max-w-[390px] sm:order-first tablet:order-first laptop:block   xs:order-none"
         />
-        <div className="w-full m-auto bg-popup/80">
+        <div className="w-full m-auto bg-mainMaroon text-white">
           {listArrayRight.map((item, index) => {
             return (
               <Card

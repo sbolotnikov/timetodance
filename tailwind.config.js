@@ -1,25 +1,28 @@
 
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
       'titles': ['GoudyBookletter','Times New Roman'],
     },
     extend: {
       colors: {
+        'mainYellow':'#6a640d',
+        'mainMaroon':'rgb(56, 28, 45)',
         'popup': '#594949',
         'main-bg':'#0C1118',
         'high':'#FA1A1A',
 
       },
       backgroundImage: {
-        'aboutBG': "url('/images/machine.png')",
-        
+        'heroImg': "url('/images/backgroundhero.png')",
+        'mainImg': "url('/images/main.png')",
       }
     },
+
     screens: {
+
     'xs':{'max':'419px'}, 
     'sm':{'max' :'768px'},
     

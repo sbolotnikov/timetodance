@@ -5,7 +5,7 @@
   
 }
 :root{
-  --sizeindex:calc(1vw+1vh)
+  --sizeindex:calc(1vw + 1vh)
 }
 
 
@@ -22,6 +22,51 @@
   font-family: SegoePrint;
   src: url('/fonts/segoeprint.ttf');
 }
+@font-face {
+  font-family: Birthstone;
+  src: url('/fonts/Birthstone-Regular.ttf');
+}
+.fontSizeMiddle{
+  font-size: calc(var(--sizeindex)*1.5);
+}
+.fontSizeBig{
+  font-size: calc(var(--sizeindex)*4.5);
+}
+/* Portrait orientation */
+@media screen and (orientation: portrait) {
+.widthAlt{
+  width:98%;
+  /* height: 66.67vh; */
+}
+.heroSection {
+  flex-direction: column;
+}
+}
+.stainglass {
+  background:rgb(56, 28, 45);
+}
+/* Landscape orientation */
+@media screen and (orientation: landscape) {
+  .widthAlt{
+    width:48%;
+  }
+  .heroSection {
+    height:66.67%;
+  }
+  @supports (backdrop-filter: blur(.25rem)) {
+    .stainglass {
+      background: rgba(21, 12, 12, 0.6);
+      backdrop-filter: blur(.25rem);
+    }
+  }
+  .departmentsContainer{
+    /* height: 33.33vh; */
+    height: calc(33.33vh - 3rem);
+    background: rgb(21, 12, 12);
+  }
+}
+
+
 
 /* Animations */
 .animate_class {
@@ -82,6 +127,7 @@
 :root{
 --quests:7;
 }
+
 
 .slide{
  width:320px;
