@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     { url: '/social', title: 'Social Dancers' },
     { url: '/competition', title: 'Competitive' },
     { url: '/wedding', title: 'Wedding couples' },
-    { url: '#', title: 'Kids' },
+    // { url: '#', title: 'Kids' },
     { url: '/about', title: 'About Us' },,
     { url: '/contacts/0', title: 'Locations' },
   ];

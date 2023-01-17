@@ -8,7 +8,7 @@ function contacts(props) {
   let locations = value.locations;
   return (
     <div>
-      <h1 className="text-center p-6 font-extrabold text-mainMaroon uppercase">Where is it?</h1>
+      <h1 className="text-center p-6 font-extrabold text-darkAccent uppercase">Where is it?</h1>
       {/* Где находится? */}
       <GetLocation
             loc={location}
@@ -17,7 +17,7 @@ function contacts(props) {
               setLocation(loc);
             }}
           />
-      <h2 className=" font-extrabold m-4 text-center text-5xl text-mainMaroon font-[GoudyBookletter]" >
+      <h2 className=" font-extrabold m-4 text-center text-5xl text-brightAccent font-[GoudyBookletter]" >
         {locations[location].name}
       </h2>
       <div className="containerContacts">
@@ -41,13 +41,13 @@ function contacts(props) {
           </h2>
         </div>
         <div className="borderleft">
-        <div className="rounded bg-popup/60 p-3 m-2">
+        <div className="rounded bg-popup/20 p-3 m-2">
           <p
             className="m-4"
             dangerouslySetInnerHTML={{ __html: locations[location].address }}
           ></p>
           <p>
-            <span className="text-white text-lg font-black flex flex-row">
+            <span className=" text-lg font-black flex flex-row">
               <img
                 className="object-fill w-5 mr-2"
                 src={'/icons/call.svg'}
@@ -57,7 +57,7 @@ function contacts(props) {
             </span>
           </p>
           <p>
-            <span className="text-white text-xl font-black mr-2">@</span>
+            <span className="text-brightAccent text-xl font-black mr-2">@</span>
             {locations[location].email}
           </p>
           <p

@@ -73,14 +73,14 @@ function AboutComponent() {
 
   return (
     <div className="max-w-[1170px] w-full font-['SourceSansPro'] mx-auto mt-10">
-      <h1 className="text-right font-titles p-10 text-2xl font-extrabold">
+      <h1 className="text-right font-titles p-10 text-2xl text-white font-extrabold bg-cover bg-heroImg ">
         {' '}
         "The one thing that can solve most of our problems is dancing" <br/>James Brown
       </h1>
-      <h2 className="text-center text-mainMaroon font-extrabold uppercase">Why Us?</h2>
+      <h2 className="text-center text-darkAccent font-extrabold uppercase">Why Us?</h2>
       <div className="flex xs:flex-col sm:flex-col tablet:flex-col laptop:flex-row w-full my-3">
         
-        <div className="w-full m-auto bg-mainMaroon text-white">
+        <div className="w-full m-auto bg-darkAccent text-white">
           {listArrayLeft.map((item, index) => {
             return (
               <Card
@@ -105,10 +105,10 @@ function AboutComponent() {
         </div>
         <img
           src="/images/hall.png"
-          alt="Прятки в темноте"
+          alt="Sergey and Nancy"
           className="lazyloaded m-auto sm:hidden  max-w-[390px] sm:order-first tablet:order-first laptop:block   xs:order-none"
         />
-        <div className="w-full m-auto bg-mainMaroon text-white">
+        <div className="w-full m-auto bg-darkAccent text-white">
           {listArrayRight.map((item, index) => {
             return (
               <Card

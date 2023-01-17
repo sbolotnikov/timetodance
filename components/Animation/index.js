@@ -9,22 +9,19 @@ const size = useWindowSize();
   // const [heightW, getHeight] = useState(window.innerHeight);
   // const [widthW, getWidth] = useState(window.innerWidth);
   function getYCenter(el) {
-    console.log(Math.floor(document.querySelector(el).getBoundingClientRect().top + document.querySelector(el).getBoundingClientRect().height / 2));
     return Math.floor(document.querySelector(el).getBoundingClientRect().top + document.querySelector(el).getBoundingClientRect().height / 2);
 
   }
   useEffect(() => {
-    console.log(size.height, size.width);
     document.querySelector("#couple").style.left = `${Math.floor((size.width - (size.height * 0.4 / 1648 * 1521)) / 2 + (size.height * 0.4 / 1648 * 1521))}px`;
     document.querySelector("#timeClock").style.left = '50vw';
     document.querySelector("#timeClock").style.top = '38vh';
-    console.log(Math.floor((size.width - (size.height * 0.4 / 1648 * 1521)) / 2))
+    // console.log(Math.floor((size.width - (size.height * 0.4 / 1648 * 1521)) / 2))
 
     gsap.to("#bigPointer", { duration: 1, repeat: 12, transformOrigin: "74% 73%", ease: 'linear', rotate: 360 });
     gsap.to("#smallPointer", { duration: 12, transformOrigin: "0% 100%", ease: 'linear', rotate: 360 });
 
     gsap.to("#timeClock", { duration: 10,transformOrigin:'50% 50%', ease: 'ease-in', opacity:0.75, scale:1, rotationY: 1040 });
-    // gsap.to("#timeClock", { duration: 5, ease: 'linear', rotateY: 650 });
 
     gsap.from("#dude", { transformOrigin: "50% 50%", opacity: 1 });
     gsap.to("#dude", { duration: 2, scale: 3, rotateY: -40 });
@@ -107,16 +104,10 @@ const size = useWindowSize();
       .to("#couple", { duration: 2, rotationY: 360 })
       .to("#couple", {  opacity:0, scale:10, duration: 2 })
       .to("#container0",{height:0, duration:1.5})
-      .fromTo(".heroSection",{opacity:0},{opacity:1, duration:1.5},'-=1.5')
-    // .to("#couple",{scale:.3,transformOrigin:`${Math.floor((widthW-375)/905*47)-75}vw ${5}vh`, opacity:0, duration:1})
-    // gsap.timeline({ delay:13}).to("#mainSite",{duration:3,opacity:1})
+      // .fromTo(".heroSection",{opacity:0},{opacity:1, duration:1.5},'-=1.5')
 
-    // -28vw 5vh
-    console.log(Math.floor((size.width - 375) / 905 * 47) - 75)
-
+    // console.log(Math.floor((size.width - 375) / 905 * 47) - 75)
   }, [size.height, size.width]);
-
-
 
   return (
 

@@ -4,35 +4,54 @@ import { useRouter } from 'next/router';
 import AboutComponent from './about';
 import Image from 'next/image';
 import Animation from './Animation';
+import InfoPopup from './InfoPopup';
 export default function FrontPage() {
+  function sleep(n) {
+    return new Promise((resolve) => setTimeout(resolve, n));
+  }
   const departments = [
     {
       imgLink: '/images/locations.png',
       imgLink2: '/images/locationsfull.png',
       pageLink: '/contacts/0',
       pageName: 'Locations',
+      text:"So don't wait, don't hesitate<br /> The time is now, the time is right<br /> Come on down to the dance studio<br /> And let's dance through the night!"
     },
     {
       imgLink: '/images/wedding.png',
       imgLink2: '/images/weddingfull.png',
       pageLink: '/wedding',
       pageName: 'Wedding Couples',
+      text:"It's your special day so why not make it grand?<br /> A memorable moment will be made when you hold each other's hand.<br /> Show off your moves with a unique and special dance,<br />We'll help you create the perfect routine for you to romance."
     },
     {
       imgLink: '/images/competitors.png',
       imgLink2: '/images/competitorsfull.png',
       pageLink: '/competition',
       pageName: 'Competitors',
+      text:"With grace and poise, steps and turns,<br /> It's time to master the dance that yearns.<br /> Our team of pros will guide the way,<br /> To help you dance like a pro today."
     },
     {
       imgLink: '/images/social.png',
       imgLink2: '/images/socialfull.png',
       pageLink: '/social',
       pageName: 'Social Dancers',
+      text:"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your salsas and tangos so much!"
     },
   ];
   const [scrolling, setScrolling] = useState(false);
   const [animationState, setAnimationState] = useState(false);
+  const [revealAlert, setRevealAlert] = useState(false);
+  const [alertStyle, setAlertStyle] = useState({});
+  const onReturn = (decision1) => {
+  
+    setRevealAlert(false);
+  };
+
+
+
+
+
   const [scrollTop, setScrollTop] = useState(0);
   const router = useRouter();
   // useEffect(() => {
@@ -72,11 +91,24 @@ export default function FrontPage() {
   //   }, []);
   return (
     <div className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
-      {animationState && <div className='absolute w-screen h-screen bg-white'><Animation/></div> }
+    {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
+      {animationState && (
+        <div className="absolute w-screen h-screen bg-transparent z-[1000]">
+          <Animation />
+        </div>
+      )}
       <div className=" w-full flex heroSection justify-between items-center relative">
         <div className="absolute w-full h-[66.67vh] bg-cover bg-heroImg"></div>
         <div className=" widthAlt  ">
-          <div className=" h-[66.67vh] hover:grayscale relative" onClick={(e)=>{setAnimationState(true)}}>
+          <div
+            className=" h-[66.67vh] hover:grayscale relative"
+            onClick={(e) => {
+              setAnimationState(true);
+              sleep(16500).then(() => {
+                setAnimationState(false);
+              });
+            }}
+          >
             <Image src={'/images/main.png'} alt="logo" layout="fill" />
           </div>
         </div>
@@ -84,17 +116,14 @@ export default function FrontPage() {
           <div className="  stainglass rounded-lg border-gray-600/60 portrait:w-[95%] mx-auto text-white p-2 m-1">
             <h1
               className=" text-2xl text-center font-[GoudyBookletter] "
-              // style={{ fontFamily: 'Birthstone' }}
             >
               Welcome to
             </h1>
             <h1
               className=" fontSizeBig text-center font-[Birthstone] laptop:m-5"
-              // style={{ fontFamily: 'GoudyBookletter' }}
             >
               Best Time To Dance
             </h1>
-            {/* font-size: calc(var(--sizeindex)*1.5 */}
             <p className="font-[GoudyBookletter] fontSizeMiddle text-center my-2">
               Unleash your inner dancer <br />
               And let your spirit take flight <br />
@@ -102,9 +131,9 @@ export default function FrontPage() {
               Is any time, day or night
             </p>
             <Link className="navbar__link" href={'/about'}>
-            <div className="navbar__item w-[95%]">        
-                <span  className="m-3" >About Us</span> 
-            </div>
+              <div className="navbar__item w-[95%]">
+                <span className="m-3">About Us</span>
+              </div>
             </Link>
           </div>
         </div>
@@ -113,18 +142,36 @@ export default function FrontPage() {
       <div className="w-full landscape:h-full departmentsContainer flex xs:flex-col">
         {departments.map((item, j) => {
           return (
-            <Link key={`depart${j}`} href={item.pageLink}>
-              <div className=" landscape:h-full portrait:h-64 w-full   relative flex justify-center items-end pb-2">
-                <Image src={item.imgLink2} alt="logo" layout="fill" />
-                <Image
-                  className="absolute hover:grayscale"
-                  src={item.imgLink}
-                  alt="logo"
-                  layout="fill"
-                />
-                <div className="navbar__item " style={{width:'90%'}}>
+            <div className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2">
+              <Image src={item.imgLink2} alt="logo" layout="fill" />
+              <Image
+                className="absolute hover:grayscale"
+                src={item.imgLink}
+                alt="logo"
+                layout="fill" 
+                onClick={(e)=>{
+                    setAlertStyle({
+                variantHead: 'info',
+                heading: item.pageName,
+                text: item.text,
+                color1: 'success',
+                button1: 'Continue',
+                color2: 'secondary',
+                button2: 'Cancel',
+              });
+              setRevealAlert(true);
+                  }
+                }
+              />
+              <Link key={`depart${j}`} href={item.pageLink}>
+                <div className="navbar__item " style={{ width: '90%' }}>
                   <span
-                    className=" navbar__link" style={{ backgroundColor: 'transparent', justifyContent: 'center', margin:'.75rem' }}
+                    className=" navbar__link"
+                    style={{
+                      backgroundColor: 'transparent',
+                      justifyContent: 'center',
+                      margin: '.75rem',
+                    }}
                     //                 onClick={() => {
                     //   setMenuClicked(false);
                     // }}
@@ -132,8 +179,8 @@ export default function FrontPage() {
                     {item.pageName}
                   </span>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>

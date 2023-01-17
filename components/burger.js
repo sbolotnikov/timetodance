@@ -20,9 +20,9 @@ function Burger({status}) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <g >
-              <path              
+              <path 
+                className="stroke-brightAccent"             
                 d="M5 13H65.5"
-                stroke={colorMain}
                 strokeWidth="8"
                 strokeLinecap="round"
               />
@@ -37,9 +37,8 @@ function Burger({status}) {
             <g>
 
               <path
-                
+                className="stroke-brightAccent"  
                 d="M5 35H65.5"
-                stroke={colorMain}
                 strokeDasharray="61"
                 strokeDashoffset="0"
                 strokeWidth="8"
@@ -57,9 +56,8 @@ function Burger({status}) {
             <g>
 
               <path
-               
+                className="stroke-brightAccent"  
                 d="M5 57H65.5"
-                stroke={colorMain}
                 strokeWidth="8"
                 strokeLinecap="round"
               />

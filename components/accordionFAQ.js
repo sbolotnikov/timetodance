@@ -7,11 +7,11 @@ function AccordionFAQ(props) {
 
         if (visible>-1){ 
             document.getElementById("img."+visible).classList.remove("rotate-180");
-            document.getElementById("question"+visible).classList.remove("text-mainMaroon","font-black");
+            document.getElementById("question"+visible).classList.remove("text-darkAccent","font-black");
         }
         if (n!==visible){
         document.getElementById("img."+n).classList.add("rotate-180");
-        document.getElementById("question"+n).classList.add("text-mainMaroon","font-black");
+        document.getElementById("question"+n).classList.add("text-darkAccent","font-black");
         } 
         n!==visible?setVisible(n):setVisible(-1);
       }
