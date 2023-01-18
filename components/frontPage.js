@@ -36,7 +36,7 @@ export default function FrontPage() {
       imgLink2: '/images/socialfull.png',
       pageLink: '/social',
       pageName: 'Social Dancers',
-      text:"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your salsas and tangos so much!"
+      text:"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!"
     },
   ];
   const [scrolling, setScrolling] = useState(false);
@@ -90,7 +90,7 @@ export default function FrontPage() {
   //       return () => window.removeEventListener('scroll', onScroll);
   //   }, []);
   return (
-    <div className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
+    <div id="windowStart" className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
     {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
       {animationState && (
         <div className="absolute w-screen h-screen bg-transparent z-[1000]">

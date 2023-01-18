@@ -15,7 +15,7 @@ const Navbar = ({ navbarLinks, path }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav id="navbarId" className="navbar">
       <Link className="navbar__link" href={'/'}>
         <span className="navbar__logo">
           {path !== '/' ? (
