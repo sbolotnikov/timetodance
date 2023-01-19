@@ -8,8 +8,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'brightAccent':'#A3755C',
-        'darkAccent':'rgb(56, 28, 45)',
+        'brightAccent':'#8C564A',
+        'darkAccent':'#593240',
+        'yellow1':'#DBD2AA',
+        'myBlack':'#00010D',
+        'nude1':'#BFA595',
         'popup': '#594949',
         'main-bg':'#0C1118',
         'high':'#FA1A1A',

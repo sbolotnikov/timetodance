@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import AboutComponent from './about';
 import Image from 'next/image';
-import Animation from './Animation';
 import InfoPopup from './InfoPopup';
+import Hero from './Hero';
+import sleep from '../utils/functions';
 export default function FrontPage() {
-  function sleep(n) {
-    return new Promise((resolve) => setTimeout(resolve, n));
-  }
+
   const departments = [
     {
       imgLink: '/images/locations.png',
@@ -39,69 +36,31 @@ export default function FrontPage() {
       text:"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!"
     },
   ];
-  const [scrolling, setScrolling] = useState(false);
-  const [animationState, setAnimationState] = useState(false);
+  
   const [revealAlert, setRevealAlert] = useState(false);
   const [alertStyle, setAlertStyle] = useState({});
   const onReturn = (decision1) => {
-  
-    setRevealAlert(false);
+    console.log(decision1)
+    sleep(1200).then(() => {
+      setRevealAlert(false);
+      if (decision1.response=='Continue') window.location=decision1.link
+    });
+
   };
-
-
-
-
-
-  const [scrollTop, setScrollTop] = useState(0);
-  const router = useRouter();
-  // useEffect(() => {
-  //   const onScroll = e => {
-  //     setScrollTop(e.target.documentElement.scrollTop);
-  //     setScrolling(e.target.documentElement.scrollTop > scrollTop);
-  //     console.log("scrolling")
-  //   };
-  //   window.addEventListener("scroll", onScroll);
-
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, [scrollTop]);
-  //   useEffect(() => {
-
-  //     window.addEventListener('scroll', onScroll);
-  //     return () => window.removeEventListener('scroll', onScroll);
-  //   }, [scrollTop]);
-  //   function onScroll() {
-  //     let currentPosition = 0; // or use document.documentElement.scrollTop;
-  //     console.log("wheel", WheelEvent.wheelDelta)
-  //     if (currentPosition >0) {
-  //       // downscroll code
-  //       setScrolling(true);
-  //     } else {
-  //       // upscroll code
-  //       setScrolling(false);
-  //     }
-
-  //   }
-
-  //     useEffect(() => {
-  //       const onScroll = () => {if (window.pageYOffset>0) setScrollDown(true)}
-  //       // clean up code
-  //       window.removeEventListener('scroll', onScroll);
-  //       window.addEventListener('scroll', onScroll, { passive: true });
-  //       return () => window.removeEventListener('scroll', onScroll);
-  //   }, []);
   return (
     <div id="windowStart" className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
     {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
-      {animationState && (
+      {/* {animationState && (
         <div className="absolute w-screen h-screen bg-transparent z-[1000]">
-          <Animation />
+       
+          <Animation manColor={'#080820'} skinColor={'#BFA595'} dress1={'#0149A2'} dress2={'#001E3C'}/>
         </div>
       )}
       <div className=" w-full flex heroSection justify-between items-center relative">
         <div className="absolute w-full h-[66.67vh] bg-cover bg-heroImg"></div>
         <div className=" widthAlt  ">
           <div
-            className=" h-[66.67vh] hover:grayscale relative"
+            className=" h-[66.67vh] hover:grayscale hover:scale-105 relative cursor-pointer"
             onClick={(e) => {
               setAnimationState(true);
               sleep(16500).then(() => {
@@ -137,15 +96,15 @@ export default function FrontPage() {
             </Link>
           </div>
         </div>
-      </div>
-
+      </div> */}
+      <Hero backgroundImage={'/images/backgroundhero.png'} mainImg={'/images/main.png'} manColor={'#080820'} skinColor={'#BFA595'} dress1={'#0149A2'} dress2={'#001E3C'}/>
       <div className="w-full landscape:h-full departmentsContainer flex xs:flex-col">
         {departments.map((item, j) => {
           return (
-            <div className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2">
+            <div key={`depart${j}`} className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2">
               <Image src={item.imgLink2} alt="logo" layout="fill" />
               <Image
-                className="absolute hover:grayscale"
+                className="absolute hover:grayscale hover:scale-105 cursor-pointer"
                 src={item.imgLink}
                 alt="logo"
                 layout="fill" 
@@ -158,12 +117,13 @@ export default function FrontPage() {
                 button1: 'Continue',
                 color2: 'secondary',
                 button2: 'Cancel',
+                link:item.pageLink
               });
               setRevealAlert(true);
                   }
                 }
               />
-              <Link key={`depart${j}`} href={item.pageLink}>
+              <Link  href={item.pageLink}>
                 <div className="navbar__item " style={{ width: '90%' }}>
                   <span
                     className=" navbar__link"
@@ -172,9 +132,6 @@ export default function FrontPage() {
                       justifyContent: 'center',
                       margin: '.75rem',
                     }}
-                    //                 onClick={() => {
-                    //   setMenuClicked(false);
-                    // }}
                   >
                     {item.pageName}
                   </span>
@@ -184,22 +141,7 @@ export default function FrontPage() {
           );
         })}
       </div>
-
-      {/* <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-        <span className="relative text-white">annoyed</span>
-      </span> */}
-      {/* <div className=" flex xs:flex-col sm:flex-col phone:flex-row justify-center items-start mx-auto">
-          <div className="xs:w-52 w-64 h-[13rem] xs:mx-0 mx-auto">
-            <div className="relative xs:w-52 w-64 ">
-              <img
-                className="w-64 absolute top-0 left-0 "
-                //style={{ filter: 'drop-shadow(10px 5px 4px #6a640d)' }} #4444dd #FFEC00 #7D8800 shadow change
-                src={'/svg/logo.svg'}
-                alt="hero"
-              />
-            </div>
-          </div>
-          <div className=" inner-wrap_front flex  flex-col justify-center  items-center">
+      {/* 
             <h3 className="font-bold text-2xl mt-12 w-[90%]">
               For years, Best Time To Dance has offered dance lessons to
               students of all ages who are looking to become the best that they
@@ -229,10 +171,7 @@ export default function FrontPage() {
               while giving you experiences that you will never forget, give us a
               call and sign up for your first dance class today!
 
-            </h3>
-          </div>
-        </div> */}
-      {scrolling && <AboutComponent />}
+            </h3> */}
     </div>
   );
 }

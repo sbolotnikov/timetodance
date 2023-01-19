@@ -62,7 +62,7 @@ function AboutComponent() {
     {
       question: 'What is your cancellation policy?',
       answer:
-        'Due to the growing popularity of ballroom dancing, we ask our students to cancel any dance lesson a minimum of 24 hours ahead of time to avoid being charged in regular ballroom. For the private room deadline is extended to 48 hours. Please, leave us a voice message rather than a text.',
+        "We understand that things come up, and we'll do our best,<br />To accommodate you, but please do the rest.<br />By letting us know in advance,<br />So we can plan accordingly, and give you a chance.<br /><br />To reschedule or cancel without any fees,<br />Just make sure to give us 24 hours notice, please.<br />We appreciate your understanding and cooperation,<br />And look forward to dancing with you, with elation.",
     },
     {
       question: 'Feel free to email us your question. We will be happy to answer you here.',
@@ -97,7 +97,7 @@ function AboutComponent() {
                     'sm:text-left',
                     'laptop:text-right',
                   ],
-                  desc: ['xs:text-left', 'laptop:text-right','text-gray-400'],
+                  desc: ['xs:text-left', 'laptop:text-right','text-yellow1'],
                 }}
               />
             );
@@ -120,7 +120,7 @@ function AboutComponent() {
                   text: [],
                   image: ['w-12', 'h-12', 'm-5'],
                   name: ['font-extrabold', 'uppercase', 'text-left'],
-                  desc: ['text-left', 'text-gray-400'],
+                  desc: ['text-left', 'text-yellow1'],
                 }}
               />
             );

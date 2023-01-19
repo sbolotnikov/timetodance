@@ -40,6 +40,7 @@
 }
 .heroSection {
   flex-direction: column;
+  overflow-y: visible;
 }
 }
 .stainglass {
@@ -51,7 +52,7 @@
     width:48%;
   }
   .heroSection {
-    height:66.67%;
+    height:66.67vh;
   }
   @supports (backdrop-filter: blur(.25rem)) {
     .stainglass {
