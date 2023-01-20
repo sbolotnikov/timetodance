@@ -5,125 +5,94 @@ import InfoPopup from './InfoPopup';
 import Hero from './Hero';
 import sleep from '../utils/functions';
 export default function FrontPage() {
-
   const departments = [
     {
       imgLink: '/images/locations.png',
       imgLink2: '/images/locationsfull.png',
       pageLink: '/contacts/0',
       pageName: 'Locations',
-      text:"So don't wait, don't hesitate<br /> The time is now, the time is right<br /> Come on down to the dance studio<br /> And let's dance through the night!"
+      text: "So don't wait, don't hesitate<br /> The time is now, the time is right<br /> Come on down to the dance studio<br /> And let's dance through the night!",
     },
     {
       imgLink: '/images/wedding.png',
       imgLink2: '/images/weddingfull.png',
       pageLink: '/wedding',
       pageName: 'Wedding Couples',
-      text:"It's your special day so why not make it grand?<br /> A memorable moment will be made when you hold each other's hand.<br /> Show off your moves with a unique and special dance,<br />We'll help you create the perfect routine for you to romance."
+      text: "It's your special day so why not make it grand?<br /> A memorable moment will be made when you hold each other's hand.<br /> Show off your moves with a unique and special dance,<br />We'll help you create the perfect routine for you to romance.",
     },
     {
       imgLink: '/images/competitors.png',
       imgLink2: '/images/competitorsfull.png',
       pageLink: '/competition',
       pageName: 'Competitors',
-      text:"With grace and poise, steps and turns,<br /> It's time to master the dance that yearns.<br /> Our team of pros will guide the way,<br /> To help you dance like a pro today."
+      text: "With grace and poise, steps and turns,<br /> It's time to master the dance that yearns.<br /> Our team of pros will guide the way,<br /> To help you dance like a pro today.",
     },
     {
       imgLink: '/images/social.png',
       imgLink2: '/images/socialfull.png',
       pageLink: '/social',
       pageName: 'Social Dancers',
-      text:"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!"
+      text: 'So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!',
     },
   ];
-  
+
   const [revealAlert, setRevealAlert] = useState(false);
   const [alertStyle, setAlertStyle] = useState({});
   const onReturn = (decision1) => {
-    console.log(decision1)
+    console.log(decision1);
     sleep(1200).then(() => {
       setRevealAlert(false);
-      if (decision1.response=='Continue') window.location=decision1.link
+      if (decision1.response == 'Continue') window.location = decision1.link;
     });
-
   };
   return (
-    <div id="windowStart" className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
-    {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
-      {/* {animationState && (
-        <div className="absolute w-screen h-screen bg-transparent z-[1000]">
-       
-          <Animation manColor={'#080820'} skinColor={'#BFA595'} dress1={'#0149A2'} dress2={'#001E3C'}/>
-        </div>
-      )}
-      <div className=" w-full flex heroSection justify-between items-center relative">
-        <div className="absolute w-full h-[66.67vh] bg-cover bg-heroImg"></div>
-        <div className=" widthAlt  ">
-          <div
-            className=" h-[66.67vh] hover:grayscale hover:scale-105 relative cursor-pointer"
-            onClick={(e) => {
-              setAnimationState(true);
-              sleep(16500).then(() => {
-                setAnimationState(false);
-              });
-            }}
-          >
-            <Image src={'/images/main.png'} alt="logo" layout="fill" />
-          </div>
-        </div>
-        <div className=" widthAlt  flex justify-center items-center ">
-          <div className="  stainglass rounded-lg border-gray-600/60 portrait:w-[95%] mx-auto text-white p-2 m-1">
-            <h1
-              className=" text-2xl text-center font-[GoudyBookletter] "
-            >
-              Welcome to
-            </h1>
-            <h1
-              className=" fontSizeBig text-center font-[Birthstone] laptop:m-5"
-            >
-              Best Time To Dance
-            </h1>
-            <p className="font-[GoudyBookletter] fontSizeMiddle text-center my-2">
-              Unleash your inner dancer <br />
-              And let your spirit take flight <br />
-              The best time to hit the dance floor <br />
-              Is any time, day or night
-            </p>
-            <Link className="navbar__link" href={'/about'}>
-              <div className="navbar__item w-[95%]">
-                <span className="m-3">About Us</span>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div> */}
-      <Hero backgroundImage={'/images/backgroundhero.png'} mainImg={'/images/main.png'} manColor={'#080820'} skinColor={'#BFA595'} dress1={'#0149A2'} dress2={'#001E3C'}/>
+    <div
+      id="windowStart"
+      className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative"
+    >
+      {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
+
+      <Hero
+        backgroundImage={'/images/backgroundhero.png'}
+        mainImg={'/images/main.png'}
+        manColor={'#080820'}
+        skinColor={'#BFA595'}
+        dress1={'#0149A2'}
+        dress2={'#001E3C'}
+        firstLine={'Welcome to'}
+        header={'Best Time To Dance'}
+        paragraph={"Unleash your inner dancer <br />And let your spirit take flight <br />The best time to hit the dance floor <br />Is any time, day or night"}
+        callToAction={'About Us'}
+        buttonLink={'/about'}
+      />
       <div className="w-full landscape:h-full departmentsContainer flex xs:flex-col">
         {departments.map((item, j) => {
           return (
-            <div key={`depart${j}`} className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2">
+            <div
+              key={`depart${j}`}
+              className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2"
+            >
               <Image src={item.imgLink2} alt="logo" layout="fill" />
               <Image
                 className="absolute hover:grayscale hover:scale-105 cursor-pointer"
                 src={item.imgLink}
                 alt="logo"
-                layout="fill" 
-                onClick={(e)=>{
-                    setAlertStyle({
-                variantHead: 'info',
-                heading: item.pageName,
-                text: item.text,
-                color1: 'success',
-                button1: 'Continue',
-                color2: 'secondary',
-                button2: 'Cancel',
-                link:item.pageLink
-              });
-              setRevealAlert(true);
-                  }
-                }
+                layout="fill"
+                onClick={(e) => {
+                  setAlertStyle({
+                    variantHead: 'info',
+                    heading: item.pageName,
+                    text: item.text,
+                    color1: 'success',
+                    button1: 'Continue',
+                    color2: 'secondary',
+                    button2: 'Cancel',
+                    link: item.pageLink,
+                  });
+                  setRevealAlert(true);
+                }}
               />
-              <Link  href={item.pageLink}>
+              <Link href={item.pageLink}>
                 <div className="navbar__item " style={{ width: '90%' }}>
                   <span
                     className=" navbar__link"

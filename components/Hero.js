@@ -35,14 +35,14 @@ function Hero(props) {
         </div>
         <div className=" widthAlt  flex justify-center items-center ">
           <div className="stainglass rounded-lg border-gray-600/60 portrait:w-[95%] mx-auto text-white p-2 m-1">
-            <h1 className="text-2xl text-center font-[GoudyBookletter]">Welcome to</h1>
-            <h1 className="fontSizeBig text-center font-[Birthstone] laptop:m-5">Best Time To Dance</h1>
-            <p className="font-[GoudyBookletter] fontSizeMiddle text-center my-2">Unleash your inner dancer <br />And let your spirit take flight <br />The best time to hit the dance floor <br />Is any time, day or night</p>
-            <Link className="navbar__link" href={'/about'}>
+            {props.firstLine &&<h1 className="text-2xl text-center font-[GoudyBookletter]">{props.firstLine}</h1>}
+            {props.header &&<h2 className="fontSizeBig leading-10 text-center font-[Birthstone] laptop:m-4">{props.header}</h2>}
+            {props.paragraph &&<p className="font-[GoudyBookletter] fontSizeMiddle text-center my-2" dangerouslySetInnerHTML={{ __html:props.paragraph}} />}
+            {props.buttonLink &&<Link className="navbar__link" href={props.buttonLink}>
               <div className="navbar__item w-[95%]">
-                <span className="m-3">About Us</span>
+                <span className="m-3">{props.callToAction}</span>
               </div>
-            </Link>
+            </Link>}
           </div>
         </div>
       </div>
