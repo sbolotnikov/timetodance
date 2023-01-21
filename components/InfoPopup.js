@@ -29,7 +29,7 @@ export default function InfoPopup(props) {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            // initial={{ opacity: 0, scale:0.1, x:-600 }}
+            initial={{ opacity: 0, x:-600 }}
             transition={{
               ease: 'easeOut',
               duration: 1,

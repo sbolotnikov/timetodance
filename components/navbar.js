@@ -3,6 +3,7 @@ import Emailform from './emailform';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Burger from './burger';
+import sleep from '../utils/functions';
 // import ContactMailIcon from '@mui/icons-material/ContactMail';
 const Navbar = ({ navbarLinks, path }) => {
   // Determines if the "menu icon" was clicked or not. Note that this icon is only visible when the window width is small.
@@ -142,7 +143,7 @@ const Navbar = ({ navbarLinks, path }) => {
           </div>
         )}
         <button
-          className="navbar__menu relative m-1 flex cursor-pointer "
+          className="navbar__menu relative -mt-1.5 flex cursor-pointer "
           onClick={() => {
             burgerState
               ? document
@@ -179,7 +180,7 @@ const Navbar = ({ navbarLinks, path }) => {
       {emailFormVis && (
         <Emailform
           onChange={(e) => {
-            setEmailFormVis(false);
+            sleep(1200).then(() => setEmailFormVis(false));
           }}
         />
       )}
