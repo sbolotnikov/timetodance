@@ -39,6 +39,9 @@ function MyApp({ Component, pageProps, router }) {
 <meta property="og:title" content="Best Time To Dance"/>
 <meta property="og:description" content="Independent Ballroom And Latin Dance Instruction with highly skilled and certified Professionals in New York City, Long Island and New Jersey"/>
 <meta property="og:site_name" content="Best Time To Dance"/>
+
+<link rel="shortcut icon" href="/favicon.ico"></link>
+<link rel="manifest" href="manifest.json" />
       </Head>
       <AppContext.Provider value={dataObject}>
       <motion.div key={router.route} initial='pageInitial' animate='pageAnimate' variants={{
