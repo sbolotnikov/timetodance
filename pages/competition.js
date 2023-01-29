@@ -18,6 +18,7 @@ function competition() {
         paragraph={"With grace and poise, steps and turns,<br /> It's time to master the dance that yearns.<br /> Our team of pros will guide the way,<br /> To help you dance like a pro today."}
         callToAction={'Call Us'}
         buttonLink={'tel:+19179162840'}
+        heroSize={'50'}
       />
     </div>
   );

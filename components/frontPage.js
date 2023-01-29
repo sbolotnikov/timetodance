@@ -18,8 +18,8 @@ export default function FrontPage() {
       imgLink2: '/images/weddingfull.png',
       pageLink: '/wedding',
       pageName: 'Wedding Couples',
-      text: "It's your special day so why not make it grand?<br /> A memorable moment will be made when you hold each other's hand.<br /> Show off your moves with a unique and special dance,<br />We'll help you create the perfect routine for you to romance.",
-    },
+      text: "It's your special day, why not make it grand?<br /> A memorable moment that starts side by side, hand in hand,<br />Showing off your moves with a unique and special dance,<br />With the perfect song and routine for your fairy tale romance.",
+    }, 
     {
       imgLink: '/images/competitors.png',
       imgLink2: '/images/competitorsfull.png',
@@ -32,7 +32,7 @@ export default function FrontPage() {
       imgLink2: '/images/socialfull.png',
       pageLink: '/social',
       pageName: 'Social Dancers',
-      text: 'So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!',
+      text: 'Looking for something fun to do?<br />Best Time to Dance has an offer for you,<br />Come on in to the ballroom floor<br />And you’ll find yourself dancing more and more',
     },
   ];
 
@@ -48,7 +48,7 @@ export default function FrontPage() {
   return (
     <div
       id="windowStart"
-      className="flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative"
+      className="flex flex-col w-full h-full justify-start  items-start m-auto  overflow-y-scroll  relative"
     >
       {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
 
@@ -64,13 +64,14 @@ export default function FrontPage() {
         paragraph={"Unleash your inner dancer <br />And let your spirit take flight <br />The best time to hit the dance floor <br />Is any time, day or night"}
         callToAction={'About Us'}
         buttonLink={'/about'}
+        heroSize={'66.67'}
       />
-      <div className="w-full landscape:h-full departmentsContainer flex xs:flex-col">
+      <div className="w-full departmentsContainer flex justify-between portrait:flex-wrap px-1">
         {departments.map((item, j) => {
           return (
             <div
               key={`depart${j}`}
-              className=" landscape:h-full portrait:h-64 w-full laptop:mx-6  relative flex justify-center items-end pb-2"
+              className=" landscape:h-full portrait:h-64 portrait:w-[50%] landscape:w-full laptop:mx-6  relative flex justify-center items-end pb-2"
             >
               <Image src={item.imgLink2} alt="logo" layout="fill" />
               <Image
@@ -93,13 +94,13 @@ export default function FrontPage() {
                 }}
               />
               <Link href={item.pageLink}>
-                <div className="navbar__item " style={{ width: '90%' }}>
+                <div className="navbar__item" style={{ width: '75%',flex:'none' }}>
                   <span
                     className=" navbar__link"
                     style={{
                       backgroundColor: 'transparent',
                       justifyContent: 'center',
-                      margin: '.75rem',
+                      margin: '.25rem',
                     }}
                   >
                     {item.pageName}

@@ -9,6 +9,14 @@ function Hero(props) {
         document.getElementById(
           'pageHero'
         ).style.backgroundImage = `url(${props.backgroundImage})`;
+     
+        document.getElementById('pageHero')
+        .style.height=`${props.heroSize}vh`
+                // .classList.add(`h-[${props.heroSize}vh]`);
+        document.getElementById('mainPicHero')
+        .style.height=`${props.heroSize}vh`
+                // .classList.add(`h-[${props.heroSize}vh]`);
+
       }, []);
   return (
     <div className='w-full'>
@@ -18,11 +26,12 @@ function Hero(props) {
           <Animation manColor={props.manColor} skinColor={props.skinColor} dress1={props.dress1} dress2={props.dress2}/>
         </div>
       )}
-      <div className=" w-full flex heroSection justify-between items-center relative">
-        <div id='pageHero' className="absolute w-full h-[66.67vh] bg-cover"></div>
+      <div id='topLayerHero' className={`w-full flex portrait:flex-col portrait:overflow-y-visible justify-between items-center relative`}>
+        <div id='pageHero' className={`absolute w-full bg-cover`}></div>
         <div className=" widthAlt  ">
           <div
-            className=" h-[66.67vh] hover:grayscale hover:scale-105 relative cursor-pointer"
+            id="mainPicHero"
+            className={` hover:grayscale hover:scale-105 relative cursor-pointer`}
             onClick={(e) => {
               setAnimationState(true);
               sleep(16500).then(() => {

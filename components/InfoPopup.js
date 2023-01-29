@@ -41,7 +41,7 @@ export default function InfoPopup(props) {
               x: ['-100vw', '0vw', '0vw', '0vw', '0vw'],
             }}
             exit={{ opacity: [1, 1, 1, 1, 0],rotateX: ['0deg', '0deg', '89deg', '89deg', '90deg'], x: [ '0vw', '0vw', '0vw', '0vw', '-100vw'] }}
-            className="m-auto  max-w-[600px]  border-4 border-brightAccent/75 overflow-hidden  rounded-lg w-[97%]  flex flex-col content-evenly relative text-white"
+            className="m-auto  max-w-[600px] max-h-[90%]  border-4 border-brightAccent/75 overflow-hidden  rounded-lg w-[97%]  flex flex-col content-evenly relative text-white"
           >
             <PopupSign text={''} />
             <div className="absolute w-full h-full flex flex-col justify-evenly items-center xs:text-sm xs:leading-4">

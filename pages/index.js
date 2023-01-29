@@ -23,7 +23,6 @@ export default function Home() {
         Pro-Am, ProAm, kids, Dancesport, competition, championship, best time to
         dance
       </Head>
-      {/* <Animation/> */}
       <FrontPage />
     </>
   );

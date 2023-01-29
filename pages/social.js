@@ -15,9 +15,10 @@ function social() {
         dress2={'brown'}
         firstLine={'Hello social dance fanatics.Welcome to'}
         header={'Social Dance Party '}
-        paragraph={"So come on in and try out Best Time to Dance,<br /> We’ll make sure you improve with every chance!<br /> Our private lessons give you the personal touch,<br />So you can perfect your moves so much!"}
+        paragraph={"Looking for something fun to do?<br />Best Time to Dance has an offer for you,<br />Come on in to the ballroom floor<br />And you’ll find yourself dancing more and more"}
         callToAction={'Call Us'}
         buttonLink={'tel:+19179162840'}
+        heroSize={'50'}
       />
     </div>
   );

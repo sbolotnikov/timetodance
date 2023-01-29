@@ -5,7 +5,7 @@
   
 }
 :root{
-  --sizeindex:calc(1vw + 1vh)
+  --sizeindex:calc(1vw + 1vh);
 }
 
 
@@ -28,10 +28,13 @@
 }
 .fontSizeMiddle{
   font-size: calc(var(--sizeindex)*1.5);
+  line-height: calc(var(--sizeindex)*1.5);
 }
 .fontSizeBig{
   font-size: calc(var(--sizeindex)*4.5);
 }
+
+
 /* Portrait orientation */
 @media screen and (orientation: portrait) {
 .widthAlt{
@@ -61,13 +64,10 @@
     }
   }
   .departmentsContainer{
-    /* height: 33.33vh; */
-    height: calc(33.33vh - 3rem);
+    height: calc(33.33vh - var(--sizeindex)*3);
     background: rgb(21, 12, 12);
   }
 }
-
-
 
 /* Animations */
 .animate_class {
