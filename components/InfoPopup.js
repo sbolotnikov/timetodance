@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 export default function InfoPopup(props) {
   // main popup alert component
   const [isVisible, setIsVisible] = useState(true);
-  const el = document.querySelector('#windowStart');
+  const el = document.querySelector('.windowStart');
   function StopScroll() {
     // prevent scrolling
     var x = 0;

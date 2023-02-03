@@ -47,8 +47,7 @@ export default function FrontPage() {
   };
   return (
     <div
-      id="windowStart"
-      className="flex flex-col w-full h-full justify-start  items-start m-auto  overflow-y-scroll  relative"
+      className="windowStart flex flex-col w-full h-full justify-start  items-start m-auto  overflow-y-scroll  relative"
     >
       {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
 
@@ -96,7 +95,7 @@ export default function FrontPage() {
               <Link href={item.pageLink}>
                 <div className="navbar__item" style={{ width: '75%',flex:'none' }}>
                   <span
-                    className=" navbar__link"
+                    className=" navbar__link fontSizeMiddle"
                     style={{
                       backgroundColor: 'transparent',
                       justifyContent: 'center',
