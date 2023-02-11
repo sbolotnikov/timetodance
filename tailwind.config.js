@@ -8,8 +8,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'brightAccent':'#8C564A',
-        'darkAccent':'#593240',
+        'brightAccent':'#784D54',//'#8C564A',
+        'darkAccent':'#351018',//'#593240',
         'yellow1':'#DBD2AA',
         'myBlack':'#00010D',
         'nude1':'#BFA595',
@@ -19,7 +19,7 @@ module.exports = {
 
       },
       backgroundImage: {
-        'heroImg': "url('/images/backgroundhero.png')",
+        'heroImg': "url('/images/backgroundhero.jpg')",
         'mainImg': "url('/images/main.png')",
       }
     },

@@ -5,7 +5,6 @@ import Animation from '../components/Animation';
 export default function Home() {
   return (
     <>
-      <Head>
         {/* <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,12 +15,17 @@ export default function Home() {
   ga('send', 'pageview');
 
 </script>  */}
-        description: Independent Ballroom And Latin Dance Instruction with
-        highly skilled and certified Professionals in New York City, Long Island
-        and New Jersey keywords: Best, Time, Dance, studio, Social dance,
-        Wedding dance, lesson, Sergey, Bolotnikov, Social, Ballroom, Latin,
-        Pro-Am, ProAm, kids, Dancesport, competition, championship, best time to
-        dance
+      <Head>
+      <title>Best Time To Dance - Welcome</title>
+<meta name="title" content="Best Time To Dance - Welcome" />
+<meta name="description" content="Best Time To Dance - Welcome - Independent Ballroom And Latin Dance Instruction with highly skilled and certified Professionals in New York City, Long Island and New Jersey"/>
+<meta name="keywords" content="Best, Time, Dance, studio, lesson, Sergey, Bolotnikov, Social, Ballroom, Latin, Pro-Am, ProAm, kids, Dancesport,competition, championship,  best time to dance"/>
+<meta property="og:url" content="https://www.time-dance.com/"/>
+<meta property="og:title" content="Best Time To Dance"/>
+<meta property="og:description" content="Independent Ballroom And Latin Dance Instruction with highly skilled and certified Professionals in New York City, Long Island and New Jersey"/>
+<meta property="og:site_name" content="Best Time To Dance"/>
+<meta property="og:image"  content="/images/weddingfull.jpg"/>
+
       </Head>
       <FrontPage />
     </>

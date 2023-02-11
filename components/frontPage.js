@@ -4,6 +4,7 @@ import Image from 'next/image';
 import InfoPopup from './InfoPopup';
 import Hero from './Hero';
 import sleep from '../utils/functions';
+
 export default function FrontPage() {
   const departments = [
     {
@@ -52,7 +53,7 @@ export default function FrontPage() {
       {revealAlert && <InfoPopup onReturn={onReturn} styling={alertStyle} />}
 
       <Hero
-        backgroundImage={'/images/backgroundhero.png'}
+        backgroundImage={'/images/backgroundhero.jpg'}
         mainImg={'/images/main.png'}
         manColor={'#080820'}
         skinColor={'#BFA595'}
