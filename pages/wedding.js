@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import MetaTags from 'react-meta-tags';
 import PageIn3D from '../components/PageIn3D';
 import  Head  from 'next/head';
 function wedding() {

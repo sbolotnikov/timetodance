@@ -1,9 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import  Head  from 'next/head';
 function competition() {
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>Best Time Dance Studio | Competitive Ballroom & Latin Dance Classes in NYC and NJ</title>
         <meta
           name="description"
@@ -31,7 +32,7 @@ function competition() {
           content="https://www.time-dance.com/competition"
         />
         <meta property="og:site_name" content="Best Time To Dance" />
-      </Head> */}
+      </Head>
 
       <div className=" flex flex-col w-full h-full justify-start  items-start m-auto overflow-hidden overflow-y-scroll relative">
         <Hero

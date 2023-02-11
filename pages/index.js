@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import FrontPage from '../components/frontPage';
-import Animation from '../components/Animation';
 export default function Home() {
   return (
     <>
@@ -24,7 +23,7 @@ export default function Home() {
 <meta property="og:title" content="Best Time To Dance"/>
 <meta property="og:description" content="Independent Ballroom And Latin Dance Instruction with highly skilled and certified Professionals in New York City, Long Island and New Jersey"/>
 <meta property="og:site_name" content="Best Time To Dance"/>
-<meta property="og:image"  content="/images/weddingfull.jpg"/>
+<meta property="og:image"  content="/images/main.jpg"/>
 
       </Head>
       <FrontPage />
