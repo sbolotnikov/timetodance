@@ -5,6 +5,7 @@ import '../styles/general.css';
 import '../styles/navStyle.css';
 import '../styles/rating.css';
 import '../styles/animation.css';
+import '../styles/dropdown.css';
 import Layout from '../components/layout';
 import AppContext from '../appContext';
 import dataObject from '../dataObject';

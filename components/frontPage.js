@@ -64,7 +64,7 @@ export default function FrontPage() {
         paragraph={"Unleash your inner dancer <br />And let your spirit take flight <br />The best time to hit the dance floor <br />Is any time, day or night"}
         callToAction={'About Us'}
         buttonLink={'/about'}
-        heroSize={'66.67'}
+        heroSize={'60'}
       />
       <div className="w-full departmentsContainer flex justify-between portrait:flex-wrap px-1">
         {departments.map((item, j) => {

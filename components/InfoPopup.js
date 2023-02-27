@@ -29,7 +29,7 @@ export default function InfoPopup(props) {
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            initial={{ opacity: 0, x:-600 }}
+            initial={{ opacity: 0, x: -600 }}
             transition={{
               ease: 'easeOut',
               duration: 1,
@@ -40,7 +40,11 @@ export default function InfoPopup(props) {
               rotateX: ['90deg', '89deg', '89deg', '0deg', '0deg'],
               x: ['-100vw', '0vw', '0vw', '0vw', '0vw'],
             }}
-            exit={{ opacity: [1, 1, 1, 1, 0],rotateX: ['0deg', '0deg', '89deg', '89deg', '90deg'], x: [ '0vw', '0vw', '0vw', '0vw', '-100vw'] }}
+            exit={{
+              opacity: [1, 1, 1, 1, 0],
+              rotateX: ['0deg', '0deg', '89deg', '89deg', '90deg'],
+              x: ['0vw', '0vw', '0vw', '0vw', '-100vw'],
+            }}
             className="m-auto  max-w-[600px] max-h-[90%]  border-4 border-brightAccent/75 overflow-hidden  rounded-lg w-[97%]  flex flex-col content-evenly relative text-white"
           >
             <PopupSign text={''} />
@@ -48,13 +52,13 @@ export default function InfoPopup(props) {
               <label className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-[80%] m-1 text-center font-[GoudyBookletter]   ">
                 {props.styling.heading}
               </label>
-              <h5
-                className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-full m-1 text-center"
+              <div
+                className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-full m-1 text-center flex flex-col justify-center items-center overflow-auto PlayenSans]"
                 dangerouslySetInnerHTML={{ __html: props.styling.text }}
               />
-              <div className="w-full flex flex-row">
+              <div className="w-full flex flex-row justify-evenly">
                 <button
-                  className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-[48%] m-1 text-center "
+                  className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-[48%] m-1 text-center font-[GoudyBookletter] "
                   onClick={(e) => {
                     AllowScroll();
                     setIsVisible(false);
@@ -66,19 +70,21 @@ export default function InfoPopup(props) {
                 >
                   {props.styling.button1}
                 </button>
-                <button
-                  className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-[48%] m-1 text-center"
-                  onClick={(e) => {
-                    AllowScroll();
-                    setIsVisible(false);
-                    props.onReturn({
-                      response: props.styling.button2,
-                      link: '',
-                    });
-                  }}
-                >
-                  {props.styling.button2}
-                </button>
+                {props.styling.button2 && (
+                  <button
+                    className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-[48%] m-1 text-center font-[GoudyBookletter] "
+                    onClick={(e) => {
+                      AllowScroll();
+                      setIsVisible(false);
+                      props.onReturn({
+                        response: props.styling.button2,
+                        link: '',
+                      });
+                    }}
+                  >
+                    {props.styling.button2}
+                  </button>
+                )}
               </div>
             </div>
           </motion.div>

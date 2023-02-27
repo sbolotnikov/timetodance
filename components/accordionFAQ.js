@@ -22,15 +22,15 @@ function AccordionFAQ(props) {
           return (
             <div className="m-3" key={"option" + j} id={j+'.links'} onClick={e => handleVisible(e)} >
               <div key={"question" + j} className="w-full flex">
-                  <img className="w-5 h-5" src={"/icons/caret.svg"}  alt="open" id={"img."+j} key={"btnflip" + j}  />
+                  <img className="w-5 h-5 transition duration-300 ease-in-out" src={"/icons/caret.svg"}  alt="open" id={"img."+j} key={"btnflip" + j}  />
                 
                 <h3 id={"question"+j} className="cursor-pointer text-left ml-4">{item.question}</h3>
                 
               </div>
              
-              {(j===visible) &&<p key={"answer" + j} style={{ cursor: "pointer" }}
+              <p className={`overflow-hidden transition duration-600 ease-in-out ${(j===visible)?'':'h-0'}`} key={"answer" + j} style={{ cursor: "pointer" }}
                     dangerouslySetInnerHTML={{ __html:item.answer}}/>
-              }
+              
             </div>
           )
         }

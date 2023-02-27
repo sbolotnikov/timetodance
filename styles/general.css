@@ -18,7 +18,10 @@
   font-family: Lumberjack;
   src: url('/fonts/lumberjack.inline-rough.otf') format('opentype');
 }
-
+@font-face {
+  font-family: PlayenSans;
+  src: url('/fonts/PlayenSans-Light.ttf') format('opentype');
+}
 @font-face {
   font-family: GoudyBookletter;
   src: url('/fonts/GoudyBookletter1911.otf');
@@ -101,7 +104,7 @@
     }
   }
   .departmentsContainer{
-    height: calc(33.33vh - var(--sizeindex)*3);
+    height: calc(40vh - var(--sizeindex)*3);
     background: rgb(21, 12, 12);
   }
 }
