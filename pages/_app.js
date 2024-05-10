@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps, router }) {
     >
       <Head>
 <link rel="shortcut icon" href="/favicon.ico"></link>
-<link rel="manifest" href="manifest.json" />
+<link rel="manifest" href="site.webmanifest" />
       </Head>
       <AppContext.Provider value={dataObject}>
       <motion.div key={router.route} initial='pageInitial' animate='pageAnimate' variants={{

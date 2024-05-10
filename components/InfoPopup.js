@@ -53,7 +53,7 @@ export default function InfoPopup(props) {
                 {props.styling.heading}
               </label>
               <div
-                className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-full m-1 text-center flex flex-col justify-center items-center overflow-auto PlayenSans]"
+                className="px-1 py-2 border-2 border-solid border-transparent rounded-sm w-full m-1 text-center flex flex-col justify-center items-center overflow-auto"
                 dangerouslySetInnerHTML={{ __html: props.styling.text }}
               />
               <div className="w-full flex flex-row justify-evenly">

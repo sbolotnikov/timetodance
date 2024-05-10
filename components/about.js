@@ -77,7 +77,7 @@ function AboutComponent() {
         {' '}
         "The one thing that can solve most of our problems is dancing" <br/>James Brown
       </h1>
-      <h2 className="text-center text-darkAccent font-extrabold uppercase">Why Us?</h2>
+      {/* <h2 className="text-center text-darkAccent font-extrabold uppercase">Why Us?</h2> */}
       <div className="flex xs:flex-col sm:flex-col tablet:flex-col laptop:flex-row w-full my-3">
         
         <div className="w-full m-auto bg-darkAccent text-white">
