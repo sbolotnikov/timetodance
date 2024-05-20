@@ -2,9 +2,9 @@
   "name": "Best Time To Dance Studio",
     "short_name": "Best Time To Dance Studio",
     "description": "Ballroom dancing instructions in NYC & NJ .",
-  "theme_color": "#fff",
-  "background_color": "#fff",
-  "display": "fullscreen",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
 
