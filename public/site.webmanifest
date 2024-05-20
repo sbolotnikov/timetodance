@@ -4,7 +4,7 @@
     "description": "Ballroom dancing instructions in NYC & NJ .",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "/",
   "start_url": "/",
 
